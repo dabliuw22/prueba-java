@@ -18,7 +18,7 @@ public class ClientServiceImp implements ClientService {
 	private RestTemplate restTemplate;
 
 	@Value("${client.rest.url}")
-	private String urlClient;
+	private static String urlClient;
 	
 	@SuppressWarnings("unchecked")
 	@Override
