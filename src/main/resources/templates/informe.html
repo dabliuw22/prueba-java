@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Prueba Java</title>
+</head>
+<body>
+	<div>
+		<table th:each="u: ${response}">
+			<p th:text="${u.nombre}"></p>
+			<thead>
+				<tr>
+					<th>Fecha</th>
+					<th>Horas</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr th:each="l: ${u.labores}">
+				<td th:text="${l.fecha}"></td>
+				<td th:text="${l.totalHoras}"></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<a th:text="Inicio" th:href="@{/}"></a>
+	</div>
+</body>
+</html>

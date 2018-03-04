@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Prueba Java</title>
+</head>
+<body>
+	<div>
+		<form method="post" th:action="@{/}" th:object="${file}" enctype="multipart/form-data">
+			<label>Fichero</label>
+			<input type="file" th:field="*{file}"/>
+			<small th:errors="*{file}"></small>
+			<input type="submit" value="Cargar Archivo"/>
+		</form>
+	</div>
+	<div>
+		<a th:if="${size > 0}" th:text="Rest" th:href="@{/informe}"></a>
+	</div>
+</body>
+</html>
