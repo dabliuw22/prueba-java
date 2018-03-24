@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.leysoft.app.models.Persona;
 import com.leysoft.app.services.inter.ClientService;
 
 @Service
@@ -22,9 +21,8 @@ public class ClientServiceImp implements ClientService {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Persona> getInforme() {
+	public List<Object> getInforme() {
 		UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromUriString(urlClient); 
 		return restTemplate.getForObject(uriBuilder.toUriString(), List.class);
 	}
-
 }
